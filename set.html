@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<div></div>
+
+<body>
+  <script>
+    let arr = ["1", "2", "2", "3"]
+    let b = new Set()
+    arr.forEach((x) => {
+      b.add(x)
+    })
+    console.log(b)
+
+    let set1 = new Set(["1", "2", "2", "3"])
+    console.log(set1)
+
+    let set2 = new Set(document.querySelectorAll('div'))
+    console.log(set2.size)
+    console.log(Array.isArray(set2))
+    console.log(typeof set2 === 'object' && !isNaN(set2.length))
+  </script>
+</body>
+
+</html>

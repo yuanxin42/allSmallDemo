@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        let data = /^s/
+        let str = 's1sadgdsg'
+        console.log('s1sad'.search(data))
+
+        let str2 = null
+        let data2 = /[abc]\d/
+        console.log('abc11'.search(data2))
+
+        let data3 = /[(s)(j)]/
+        console.log('s7s7sjdjsj'.replace(data3, '"$1"y'))
+        console.log("1s3a3c".match(/\d+/g))
+        // let reg = (/[a-z]+(\d+)/)
+        // console.log('$aaa1232'.search(reg))
+        let reg = /['"][^'"]*['"]/
+        console.log(`'abc'123`.search(reg))
+        let reg1 = /(['"])[^'"]*\1/
+        let str = "$%'abc'123"
+        console.log(str.search(reg1), str)
+        let reg2 = /(['"])[^\1]*\1/
+        console.log(str.search(reg2), str)
+    </script>
+</body>
+
+</html>

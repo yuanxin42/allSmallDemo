@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function inherit(p){
+            if(p==null)  //  为什么用==而不是===，在js中undefined和null是同样不存在原型的，切(undefined==null为true
+            throw TypeError();
+            if(Object.create){
+                return Object.create(p)  //如果Object.create方法存在，则使用
+            }
+            var t = typeof(p);
+            if(t!=='object'&&t!=='function') // 判断进行限制，t必须是引用类型为基本数据类型没法继承
+            throw TypeError();
+            function f(){}   //  定义构造函数 
+            f.prototype = p
+            return new f()
+        }
+        function Car (){
+            this.car = "i am a car"
+            var car2 = 'i am a car2'
+        }
+        Car.prototype.saycar = function(){
+            console.log(this.car)
+        }
+        var car1 = new Car()
+        car1.saycar()  
+        console.log(car1.car)
+        console.log(car1.car2)
+        console.log(Object.getPrototypeOf(car1))
+        // var a = new Object();
+        // console.log(Object.getPrototypeOf(a),'我是a')
+        // var b = Object.create(Object.getPrototypeOf(a))
+        // console.log(Object.getPrototypeOf(b),'我是b')
+        
+    </script>
+</body>
+</html>

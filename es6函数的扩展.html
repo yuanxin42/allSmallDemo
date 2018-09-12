@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+
+
+  <script>
+    let fun1 = (x = 5) => {
+      return x;
+    }
+    console.log(fun1())  // 5
+    console.log(fun1(2)) // 2
+
+
+    let fun2 = ({a = 1, b = 2} = {}) => {
+      console.log(a, b)
+    }
+    fun2({ a: 3, c: 5 })
+    {
+      let a = 1;
+      console.log(a)
+      {
+        let a = 2;
+        console.log(a)
+      }
+    }
+
+    console.log('**************************************')
+    let x = 1;
+    function f(y = x) {
+      let x = 2
+      console.log(y)
+    }
+  </script>
+</body>
+
+</html>

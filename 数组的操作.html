@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>24234</div>
+    <script>
+
+        // let arr = [001, 002, 003, 004, 005]
+        let obj = {
+            '001': '123',
+            '002': '222',
+            '003': '333',
+            '004': '444',
+            '005': '555'
+        }
+        // Object.defineProperties
+        var arr = Object.keys(obj)
+        console.log(Object.values(obj))
+        arr.length = 3;
+        console.log(arr)
+    </script>
+</body>
+
+</html>

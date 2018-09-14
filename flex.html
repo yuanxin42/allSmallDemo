@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 1000px;
+            height: 500px;
+            margin: 0 auto;
+            background: blue;
+            display: flex;
+            flex: 1;
+            flex-direction: row-reverse;
+        }
+        .box div{
+            /* width: 200px; */
+            height: 500px;
+            background: orange;
+        }
+        .box div:nth-child(1){
+            width: 200px;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div>11</div>
+        <div>33</div>
+    </div>
+</body>
+</html>

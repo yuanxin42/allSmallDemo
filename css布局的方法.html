@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* .left{
+            width: 300px;
+            height: 500px;
+            background: red;
+            float: left;
+        }
+        .right{
+            height: 500px;
+            background: blue;
+        }  */
+        /* .left{
+            width: 300px;
+            height: 500px;
+            background: red;
+            position: fixed;
+        }
+        .right{
+            height: 500px;
+            margin-left: 300px;
+            background: blue;
+        } */
+        /* .left{
+            width: 200px;
+            height: 500px;
+            display: inline-block;
+            background: red;
+        }
+        .right{
+            height: 500px;
+            width: calc(100% - 300px);
+            display: inline-block;
+            background: blue;
+        }   */
+        /* body {
+            display: flex;
+        }
+
+        .left {
+            height: 500px;
+            flex: 0 0 300px;
+            background: red;
+        }
+
+        .right {
+            height: 500px;
+            flex: 1;
+            background: blue;
+        } */
+        /* body {
+             display: table; 
+        }
+
+        .left {
+            width: 200px;
+            height: 500px;
+            display: table-cell;
+            background: blue;
+        }
+
+        .right {
+            height: 500px;
+            display: table-cell;
+            background: red;
+        } */
+
+        body {
+            display: grid;
+            grid-template-columns: 200px auto;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="left">111</div>
+    <div class="right">222</div>
+</body>
+
+</html>

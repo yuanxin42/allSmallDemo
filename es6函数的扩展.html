@@ -38,6 +38,31 @@
       let x = 2
       console.log(y)
     }
+
+    {
+      console.log(123)
+      let foo = 'outer';
+      let fun3 = (f = x => foo) => {
+        let foo = '123'
+        console.log(f())
+      }
+      fun3()
+    }
+
+    var x1 = 1;
+    function foo(x1, y = function () { x1 = 2; }) {
+      var x1 = 3;
+      y();
+      console.log(x1);
+    }
+
+    foo() // 3
+    console.log(x1)
+
+    let add = (...val) => {
+      console.log(val)  // [1,2,3]
+    }
+    add(1, 2, 3)
   </script>
 </body>
 

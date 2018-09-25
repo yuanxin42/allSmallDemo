@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let obj = {
+            a:'123',
+            b:'456',
+            say:()=>{
+                console.log(this.a)
+            },
+            say2:function(){
+                console.log(this.a,arguments)
+            }
+        };
+        // obj.say::obj;
+        obj.say2()
+        obj.say.call(obj)  // 箭头函数没发使用call
+        let obj2 ={
+            a:'111',
+            b:'222'
+        }
+        obj.say2.call(obj2,'1','2','3')
+        obj.say2.apply(obj2,['1','2','3'])
+        obj.say2.bind(obj2,'1','2','3')()
+    </script>
+</body>
+</html>

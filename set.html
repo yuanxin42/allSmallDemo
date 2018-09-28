@@ -25,6 +25,22 @@
     console.log(set2.size)
     console.log(Array.isArray(set2))
     console.log(typeof set2 === 'object' && !isNaN(set2.length))
+    console.log('*******************')
+    let obj = {
+      'x':'1',
+      'y':'2'
+    }
+    set2.add(obj)
+    console.log(set2)
+    let WeakSet1 = new WeakSet()
+    WeakSet1.add(obj)
+    console.log(WeakSet1)
+
+    let set3 = new Set(["1", "2", "2", "3"])
+    set3.add(obj)
+    set3.add('4')
+    console.log(set3)
+    
   </script>
 </body>
 

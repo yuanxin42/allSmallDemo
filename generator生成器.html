@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 函数末尾如果没有return，就是隐含的return undefined;
+        let fbnq = (max)=>{  // 手写斐波那契数列
+            let a = 0 ;
+            let b = 1;
+            let c;
+            let arr = [0,1]
+            while(arr.length<max){
+                c = a +b;
+                a = b;
+                b = c ;
+                // [a,b] = [b,a+b]  // 解构赋值
+                arr.push(c)
+            }
+            return arr;
+        }
+
+        let fbnq2 = function* (max){ // 手写斐波那契数列
+            let a = 0 ;
+            let b = 1;
+            let c;
+            let arr = []
+            while(arr.length<max){
+                yield a
+                arr.push(a)
+                c = a +b;
+                a = b;
+                b = c ;
+                // [a,b] = [b,a+b]  // 解构赋值
+                
+            }
+            return arr;
+        }
+        console.log(fbnq(10))
+        for(let val of fbnq2(5)){
+            console.log(val)
+        }
+        console.log(fbnq2(5).next())
+        
+
+    </script>
+</body>
+
+</html>

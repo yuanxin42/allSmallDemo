@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const COLOR_RED = Symbol();
+        const COLOR_GREEN = Symbol();
+
+        function getComplement(color) {
+            switch (color) {
+                case COLOR_RED:
+                    return 123;
+                case COLOR_GREEN:
+                    return 456;
+                default:
+                    throw new Error('Undefined color');
+            }
+        }
+        console.log(getComplement(COLOR_RED))
+
+        const key1 = Symbol()
+        const key2 = Symbol()
+        let obj = {
+            'x': 'x1',
+            'y': 'y1',
+            [key1]: '1111',
+            [key2]: '2222'
+        }
+        console.log(Object.keys(obj))
+        console.log(Object.getOwnPropertySymbols(obj))
+
+        let s1 = Symbol.for('foo');
+        let s2 = Symbol.for('foo');
+
+        console.log(s1 === s2) // true
+
+        // const Even = {
+        //     [Symbol.hasInstance](obj) {
+        //         return Number(obj) % 2 === 0;
+        //     }
+        // };
+
+        console.log('**********1')
+        console.log([] instanceof Object)
+        let a = []
+        console.log(a instanceof Array)
+        Array = {
+             [Symbol.hasInstance](obj) {
+                return false
+            }
+        }
+        console.log('**********')
+        console.log(a instanceof Array)
+        // console.log(2 instanceof Even) // true
+        // console.log(12345 instanceof Even) // false
+    </script>
+</body>
+
+</html>

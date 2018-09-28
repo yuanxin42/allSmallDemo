@@ -28,15 +28,20 @@
         // a=1
         // console.log(fun(b))  // 2
 
-        let fun = (val) =>{
-            console.log(typeof(val))
-            if(typeof(val)==='number'){
-                return val *val;
-            }else{
-                return 0;
-            }
+        // let fun = (val) =>{
+        //     console.log(typeof(val))
+        //     if(typeof(val)==='number'){
+        //         return val *val;
+        //     }else{
+        //         return 0;
+        //     }
+        // }
+        // console.log(fun(2))  // 4
+        function f([x, y, z]) {
+            return x+y+z
         }
-        console.log(fun(2))  // 4
+        var args = [0, 1, 2];
+        console.log(f(args))
     </script>
 </body>
 </html>

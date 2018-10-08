@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>proxy练习</h1>
+    <script>
+        var obj = new Proxy({}, {
+            get: function (target, key, receiver) {
+                console.log(`getting ${key}!`);
+                return Reflect.get(target, key, receiver);
+            },
+            set: function (target, key, value, receiver) {
+                console.log(`setting ${key}!`);
+                return Reflect.set(target, key, value, receiver);
+            }
+        });
+        obj.count = 1
+        //  setting count!
+        ++obj.count
+
+
+        let target = {};
+        let handler = {};
+
+        let {proxy, revoke} = Proxy.revocable(target, handler);
+
+        proxy.foo = 123;
+        proxy.foo // 123
+
+        revoke();
+        proxy.foo // TypeError: Revoked
+
+    </script>
+</body>
+
+</html>

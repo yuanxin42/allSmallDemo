@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+  const maxSubArray1 = function (nums) {
+  let max = -Number.MAX_VALUE
+  let sum = 0
+  for (let i = 0; i < nums.length; i++) {
+      sum += num;
+    // sum = +nums[i]
+    max = Math.max(max, sum)
+  }
+  console.log('max', max)
+}
+var maxSubArray2 = function (nums) {
+  var max = -Number.MAX_VALUE;
+  var sum = 0;
+  for (let num of nums) {
+    sum += num;
+    max = Math.max(max, sum)
+  }
+  console.log('max', max)
+}
+maxSubArray1([1,2,3,4])
+maxSubArray2([1,2,3,4])
+    </script>
+</body>
+</html>

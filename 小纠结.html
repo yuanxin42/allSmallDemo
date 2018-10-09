@@ -1,34 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-<script>
-  const maxSubArray1 = function (nums) {
-  let max = -Number.MAX_VALUE
-  let sum = 0
-  for (let i = 0; i < nums.length; i++) {
-      sum += num;
-    // sum = +nums[i]
-    max = Math.max(max, sum)
-  }
-  console.log('max', max)
-}
-var maxSubArray2 = function (nums) {
-  var max = -Number.MAX_VALUE;
-  var sum = 0;
-  for (let num of nums) {
-    sum += num;
-    max = Math.max(max, sum)
-  }
-  console.log('max', max)
-}
-maxSubArray1([1,2,3,4])
-maxSubArray2([1,2,3,4])
-    </script>
-</body>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>Document</title>
+		<style>
+			.title {
+        background: #e5edff;
+          font-size: 0;  
+			}
+			
+			.cateLogo {
+				display: inline-block;
+				width: 29px;
+				height: 21px;
+				   vertical-align: top;   
+          font-size: 0;
+				 background: url('https://p5.ssl.qhimg.com/t01b252866e85dd53a9.png'); 
+			}
+			span {
+         font-size: 16px; 
+         vertical-align: top; 
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="title">  <!-- 当元素内部嵌套内联样式产生的vertical-align和line-height搞基现象 vertical-align默认值是baseline -->
+			<div class="cateLogo"></div>
+			<span>电脑软件</span>
+    </div>
+    <p>可以看到，图片下方有一条细缝==>幽灵空白节点</p>
+    <p>https://www.zhangxinxu.com/wordpress/2015/08/css-deep-understand-vertical-align-and-line-height/</p>
+	</body>
+
 </html>

@@ -1,33 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
+
 <body>
     <script>
         let obj = {
-            a:'123',
-            b:'456',
-            say:()=>{
+            a: '123',
+            b: '456',
+            say: () => {
                 console.log(this.a)
             },
-            say2:function(){
-                console.log(this.a,arguments)
+            say2: function () {
+                console.log(this.a, arguments)
             }
         };
         // obj.say::obj;
-        obj.say2()
-        obj.say.call(obj)  // 箭头函数没发使用call
-        let obj2 ={
-            a:'111',
-            b:'222'
+        // obj.say2()
+        // obj.say.call(obj)  // 箭头函数没发使用call
+        // let obj2 = {
+        //     a: '111',
+        //     b: '222'
+        // }
+        // obj.say2.call(obj2, '1', '2', '3')
+        // obj.say2.apply(obj2, ['1', '2', '3'])
+        // obj.say2.bind(obj2, '1', '2', '3')()
+
+        // function X(p, d, path) {
+        //     return p + d + path
+        // }
+        // let paths = [1, 2, 2, 3, 5]
+        // let url = paths.map(X.bind(null, 'http', 'wwww'))
+        // console.log(url, 'urls')
+        // let y = X.bind(null, 'http', 'wwww')
+        // console.log(y)
+
+
+        function a() {
+            var money;
+            if (arguments.length > 0) {
+                money = money ? money : 0
+                money = arguments[0] + money
+                function b() {
+                    if (arguments.length > 0) {
+                        money = money ? money : 0
+                        money = arguments[0] + money
+                        return b
+                    } else {
+                        console.log(money)
+                    }
+                }
+                return b
+            } else {
+                console.log(money)
+            }
         }
-        obj.say2.call(obj2,'1','2','3')
-        obj.say2.apply(obj2,['1','2','3'])
-        obj.say2.bind(obj2,'1','2','3')()
+        // a(3)(3)(3)(3)()
+
+
+        function m(x) {
+            let sum = 0;
+            function f(y) {
+                if (y) {
+                    sum += y;
+                    return f
+                } else {
+                    return sum;
+                }
+            }
+            if (x) {
+                sum += x;
+                return f
+            } else {
+                return sum
+            }
+        }
+        // console.log(m(1)(2)(3)(5)())
+        function a() {
+            let m = 0;
+            let arr = []
+            let res = +function () {
+                if (arguments.length == 0) {
+                    for (let i = 0; i < arr.length; i++) {
+                        m += arr[i]
+                    }
+                    console.log(m)
+                } else {
+                    arr.push(...arguments);
+                    console.log(arr)
+                    return res;
+                }
+            }
+            // arr.push(...arguments);
+            return res;
+        }
+        a(11)(22)()
     </script>
 </body>
+
 </html>

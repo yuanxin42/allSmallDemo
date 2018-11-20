@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var per = (function () {
+            var i = null
+            var n = 'java'
+            var age = 20
+            function init() {
+                return {
+                    getName: function() {
+                        return n
+                    },
+                    getage: function() {
+                        return age
+                    }
+                }
+            }
+            return {
+                getinstance: function () {
+                    if (!i) {
+                        console.log(12313)
+                        i = init()
+                    }
+                    return i
+                }
+            }
+        })()
+        var p1 = per.getinstance()
+        // console.log(p1.i)
+        var p2 = per.getinstance()
+        console.log(p1,p2,p1==p2)
+
+        function aa(){
+            var x = 123
+            console.log(8888)
+            function bb(){
+                return x+1
+            }
+            return bb
+        }
+        let b=aa()
+        console.log(x)
+    </script>
+</body>
+
+</html>

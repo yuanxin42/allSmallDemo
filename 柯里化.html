@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>函数柯里化</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        // function add(...values) {
+        //     let sum = 0;
+
+        //     for (var val of values) {
+        //         sum += val;
+        //     }
+
+        //     return sum;
+        // }
+
+        // Function.prototype.curry = function () {
+        //     let slice = Array.prototype.slice;
+        //     let defaultValue = slice.call(arguments);
+        //     let that = this;
+        //     return function () {
+        //         // debugger;
+        //         return that.apply(this, defaultValue.concat(slice.call(arguments)))
+        //     }
+        // }
+        // let add1 = add.curry(1, 2);
+        // console.log(add1(5)); //8
+        // console.log(add1(3)); //6
+
+
+        function add() {
+            let arr = [];
+            function add_() {
+                if (arguments.length === 0) {
+                    console.log(arr)  // 做个累加函数就Ok了 
+                } else {
+                    arr = arr.concat([].slice.call(arguments))
+                    // console.log(arr)
+                    return add_
+                }
+            }
+            if (arguments.length === 0) {
+                console.log(arr)
+            } else {
+                arr = arr.concat([].slice.call(arguments))
+                // console.log(arr)
+                return add_
+            }
+
+        }
+        add(1)(2)(3)()
+    </script>
+</body>
+
+</html>
